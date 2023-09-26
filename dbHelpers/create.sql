@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `compras_gamer`;
-CREATE DATABASE IF NOT EXISTS `compras_gamer`;
-USE `compras_gamer`;
+DROP DATABASE IF EXISTS `so_active`;
+CREATE DATABASE IF NOT EXISTS `so_active`;
+USE `so_active`;
 
 CREATE TABLE `rols` (
    `idRol` INT AUTO_INCREMENT,

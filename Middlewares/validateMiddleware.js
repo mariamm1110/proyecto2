@@ -1,4 +1,4 @@
-// usuario ya logueado, se redirecciona a '/home'
+
 
 module.exports = (req,res,next)=>{
     console.log(req.session.userLogged);
