@@ -129,7 +129,39 @@ const controller = {
 			});
 	
 	
-		}
+		},
+		detail : (req,res)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'shop');
+			let id = req.params.id
+			db.products.findByPk(id)
+			.then((producto)=>{
+				console.log(producto)
+				res.render(htmlPath, {producto
+					})
+			 })
+			 .catch(error => res.send(error))
+		},
+		catalogue: (req, res) => {
+			
+			
+			
+			db.products.findAll({
+				include: ['categories']
+        	})
+			.then((products)=>{
+				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'catalogue');
+				console.log(products);
+				res.render(htmlPath, {
+					products,
+					//user:req.session.userLogged
+			})
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
 	}
 ;
 
